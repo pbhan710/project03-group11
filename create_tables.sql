@@ -8,9 +8,9 @@ DROP TABLE IF EXISTS movie CASCADE;
 CREATE TABLE "movie" (
     "id" int NOT NULL,
     "title" varchar NOT NULL,
-    "tagline" varchar NOT NULL,
-    "overview" varchar NOT NULL,
-    "homepage" varchar NOT NULL,
+    "tagline" varchar,
+    "overview" varchar,
+    "homepage" varchar,
     "release_date" date NOT NULL,
     "budget" money NOT NULL,
     "revenue" money NOT NULL,
@@ -30,6 +30,7 @@ CREATE TABLE "actor" (
     "profile_path" varchar,
     "movie_id" int NOT NULL,
     "character" varchar NOT NULL,
+	PRIMARY KEY (id),
     FOREIGN KEY (movie_id) REFERENCES movie(id)
 );
 
@@ -42,5 +43,6 @@ CREATE TABLE "director" (
     "name" varchar NOT NULL,
     "profile_path" varchar,
     "movie_id" int NOT NULL,
+	PRIMARY KEY (id),
     FOREIGN KEY (movie_id) REFERENCES movie(id)
 );

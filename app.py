@@ -1,7 +1,6 @@
 # Import dependencies.
 import os
 
-import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
@@ -18,7 +17,7 @@ username = 'postgres'
 password = 'postgres'
 host = 'localhost'
 port = 5432
-database_name = 'project03-group11_db'
+database_name = 'project03_group11_db'
 rds_connection_string = f'{protocol}://{username}:{password}@{host}:{port}/{database_name}'
 engine = create_engine(rds_connection_string)
 
@@ -86,7 +85,7 @@ def top10actors():
 # Web Routes
 @app.route("/")
 def welcome():
-   return render_template("/index.html")
+   return render_template("index_test.html")
 
 # class Movie(db.Model):
 #     cast_id = db.Column(db.Integer, primary_key=True)
