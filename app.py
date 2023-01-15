@@ -1,25 +1,41 @@
 # Import dependencies.
 import os
-from flask import Flask, jsonify, render_template, request, url_for, redirect
-from flask_sqlalchemy import SQLAlchemy
 
-from sqlalchemy.sql import func
+import sqlalchemy
+from sqlalchemy.ext.automap import automap_base
+from sqlalchemy.orm import Session
+from sqlalchemy import create_engine, func
 
+from flask import Flask, jsonify, render_template
 
-basedir = os.path.abspath(os.path.dirname(__file__))
+# basedir = os.path.abspath(os.path.dirname(__file__))
+
+#################################################
+# Database Setup
+#################################################
+protocol = 'postgresql'
+username = 'postgres'
+password = 'postgres'
+host = 'localhost'
+port = 5432
+database_name = 'project03-group11_db'
+rds_connection_string = f'{protocol}://{username}:{password}@{host}:{port}/{database_name}'
+engine = create_engine(rds_connection_string)
+
+# Reflect an existing database into a new model
+Base = automap_base()
+# Reflect the tables
+Base.prepare(engine, reflect=True)
+
+# Save reference to the table
+Movie = Base.classes.movie
+Actor = Base.classes.actor
+Director = Base.classes.director
 
 #################################################
 # Flask Setup
 #################################################
 app = Flask(__name__)
-
-app.config['SQLALCHEMY_DATABASE_URI'] =\
-        'sqlite:///' + os.path.join(basedir, 'database.db')
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-
-db = SQLAlchemy(app)
-
-postgresql://username:password@host:port/database_name
 
 #################################################
 # Flask Routes
@@ -27,40 +43,45 @@ postgresql://username:password@host:port/database_name
 
 # API Routes
 @app.route("/api/top10actors")
-def justice_league():
+def top10actors():
+   # Create our session (link) from Python to the database..
+   session = Session(engine)
 
-   result = ''
-   return jsonify(result)
+   # Return a list of top 10 actor names.
+   results = session.query(Actor.name).limit(10).all()
 
+   # Close session.
+   session.close()
 
-@app.route("/api/v1.0/justice-league/real_name/<real_name>")
-def justice_league_by_real_name(real_name):
-    """Fetch the Justice League character whose real_name matches
-       the path variable supplied by the user, or a 404 if not."""
+   return jsonify(results)
 
-    canonicalized = real_name.replace(" ", "").lower()
-    for character in justice_league_members:
-        search_term = character["real_name"].replace(" ", "").lower()
+# @app.route("/api/v1.0/justice-league/real_name/<real_name>")
+# def justice_league_by_real_name(real_name):
+#     """Fetch the Justice League character whose real_name matches
+#        the path variable supplied by the user, or a 404 if not."""
 
-        if search_term == canonicalized:
-            return jsonify(character)
+#     canonicalized = real_name.replace(" ", "").lower()
+#     for character in justice_league_members:
+#         search_term = character["real_name"].replace(" ", "").lower()
 
-    return jsonify({"error": f"Character with real_name {real_name} not found."}), 404
+#         if search_term == canonicalized:
+#             return jsonify(character)
 
+#     return jsonify({"error": f"Character with real_name {real_name} not found."}), 404
 
-@app.route("/api/v1.0/justice-league/superhero/<superhero>")
-def justice_league_by_superhero__name(superhero):
-    """Fetch the Justice League character whose superhero matches
-       the path variable supplied by the user, or a 404 if not."""
+# @app.route("/api/v1.0/justice-league/superhero/<superhero>")
+# def justice_league_by_superhero__name(superhero):
+#     """Fetch the Justice League character whose superhero matches
+#        the path variable supplied by the user, or a 404 if not."""
 
-    canonicalized = superhero.replace(" ", "").lower()
-    for character in justice_league_members:
-        search_term = character["superhero"].replace(" ", "").lower()
+#     canonicalized = superhero.replace(" ", "").lower()
+#     for character in justice_league_members:
+#         search_term = character["superhero"].replace(" ", "").lower()
 
-        if search_term == canonicalized:
-            return jsonify(character)
+#         if search_term == canonicalized:
+#             return jsonify(character)
 
-    return jsonify({"error": "Character not found."}), 404
+#     return jsonify({"error": "Character not found."}), 404
 
 # Web Routes
 @app.route("/")
