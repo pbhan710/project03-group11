@@ -1,423 +1,104 @@
-<!DOCTYPE html>
-<html lang="en-us">
-
+<!-- GIVEN EXAMPLE THAT WORKS WITH ALL POSSIBLE TIMELINE FORMATS -->
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>My First Page</title>
-</head>
-
-<body>
-  <!-- Headline -->
-  <h1>WELCOME TO OUR MOVIE PAGE</h1>
-  <!-- Image -->
-  <img src="https://assets.videomaker.com/2021/04/vintage-film-projector-and-film-screening-FSH2PGV-scaled.jpg" alt="First Video Camera" />
-  <br>
-
-<button class="tablink" onclick="openPage('Home', this, 'red')">Home</button>
-<button class="tablink" onclick="openPage('Movie News', this, 'green')" id="defaultOpen">Movie News</button>
-<button class="tablink" onclick="openPage('Actors', this, 'blue')">Actors</button>
-<button class="tablink" onclick="openPage('Movies', this, 'orange')">Movies</button>
-
-<div id="Home" class="tabcontent">
-  <h3>Home</h3>
-  <p>Home is where the heart is..</p>
-</div>
-
-<div id="Movie News" class="tabcontent">
-  <h3>Movie News</h3>
-  <p>Latest Movie Updates!</p> 
-  <a class="twitter-timeline" data-theme="dark" href="https://twitter.com/TwitterMovies?ref_src=twsrc%5Etfw">Tweets by TwitterMovies</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-</div>
-
-<div id="Actors" class="tabcontent">
-  <h3>Actors</h3>
-  <p>Top Actors of 2022.</p> 
-  <!-- Container for the image gallery -->
-<div class="container">
-
-  <!-- Full-width images with number text -->
-  <div class="mySlides">
-    <div class="numbertext">1 / 3</div>
-      <img src="https://www.biography.com/.image/t_share/MTc5ODc1NTM4NjMyOTc2Mzcz/gettyimages-693134468.jpg" style="width: 50%">
-  </div>
-
-  <div class="mySlides">
-    <div class="numbertext">2 / 3</div>
-      <img src="https://phantom-marca.unidadeditorial.es/d35b867d199e03edf0230b12022e3138/resize/1320/f/jpg/assets/multimedia/imagenes/2022/10/25/16667223728742.jpg" style="width:50%">
-  </div>
-
-
-  <div class="mySlides">
-    <div class="numbertext">3 / 3</div>
-      <img src="https://pbs.twimg.com/profile_images/1589659852271280128/KhrL02UB_400x400.jpg" style="width:50%">
-  </div>
-
-
-  <!-- Next and previous buttons -->
-  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-  <!-- Image text -->
-  <div class="caption-container">
-    <p id="caption"></p>
-  </div>
-
-  <!-- Thumbnail images -->
-  <div class="row">
-    <div class="column">
-      <img class="demo cursor" src="https://www.biography.com/.image/t_share/MTc5ODc1NTM4NjMyOTc2Mzcz/gettyimages-693134468.jpg" style="width:50%" onclick="currentSlide(1)" alt="Tom Cruise">
-    </div>
-    <div class="column"> 
-      <img class="demo cursor" src="https://phantom-marca.unidadeditorial.es/d35b867d199e03edf0230b12022e3138/resize/1320/f/jpg/assets/multimedia/imagenes/2022/10/25/16667223728742.jpg" style="width:50%" onclick="currentSlide(2)" alt="Emily R">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="https://pbs.twimg.com/profile_images/1589659852271280128/KhrL02UB_400x400.jpg" style="width:50%" onclick="currentSlide(3)" alt="Kim Kardashian">
-    </div>
-    </div>
-  </div>
-</div>
-</div>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+<script src="../src/d3.v2.min.js" type="application/javascript"></script>
+<script src="../src/timeknots.js" type="application/javascript"></script>
+<link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet">
+<link href="http://twitter.github.com/bootstrap/assets/css/bootstrap-responsive.css" rel="stylesheet">
 <style>
- * {
-  box-sizing: border-box;
-}
-
-/* Position the image container (needed to position the left and right arrows) */
-.container {
-  position: relative;
-}
-
-/* Hide the images by default */
-.mySlides {
-  display: none;
-}
-
-/* Add a pointer when hovering over the thumbnail images */
-.cursor {
-  cursor: pointer;
-}
-
-/* Next & previous buttons */
-.prev,
-.next {
-  cursor: pointer;
-  position: absolute;
-  top: 40%;
-  width: auto;
-  padding: 16px;
-  margin-top: -50px;
-  color: white;
-  font-weight: bold;
-  font-size: 20px;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-  -webkit-user-select: none;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover,
-.next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
-/* Container for image text */
-.caption-container {
-  text-align: center;
-  background-color: #222;
-  padding: 2px 16px;
-  color: white;
-}
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Six columns side by side */
-.column {
-  float: left;
-  width: 16.66%;
-}
-
-/* Add a transparency effect for thumnbail images */
-.demo {
-  opacity: 0.6;
-}
-
-.active,
-.demo:hover {
-  opacity: 1;
-}
-</style>
-<script>
-let slideIndex = 1;
-showSlides(slideIndex);
-
-// Next/previous controls
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-// Thumbnail image controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("demo");
-  let captionText = document.getElementById("caption");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
-  captionText.innerHTML = dots[slideIndex-1].alt;
-}
-</script>
-
-<div id="Movies" class="tabcontent">
-  <h3>Movies</h3>
-  <p>Top Movies 2022.</p>
-  <div class="timeline">
-    <div class="container left">
-      <div class="content">
-        <h2>2022</h2>
-        <p>The Release of Avatar, the greatest movie in the world</p>
-      </div>
-    </div>
-    <div class="container right">
-      <div class="content">
-        <h2>2021</h2>
-        <p>The year every movie sucked</p>
-        <style>
-          * {
-  box-sizing: border-box;
-}
-
-/* Set a background color */
 body {
-  background-color: #474e5d;
-  font-family: Helvetica, sans-serif;
+  font: 18px "Helvetica Neue";
+  font-weight:300;
+  text-rendering: optimizeLegibility;
+  margin-left: 20px;
 }
-
-/* The actual timeline (the vertical ruler) */
-.timeline {
-  position: relative;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* The actual timeline (the vertical ruler) */
-.timeline::after {
-  content: '';
-  position: absolute;
-  width: 6px;
-  background-color: rgb(10, 10, 10);
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  margin-left: -3px;
-}
-
-/* Container around content */
-.container {
-  padding: 10px 40px;
-  position: relative;
-  background-color: inherit;
-  width: 50%;
-}
-
-/* The circles on the timeline */
-.container::after {
-  content: '';
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  right: -17px;
-  background-color: rgb(11, 11, 11);
-  border: 4px solid #FF9F55;
-  top: 15px;
-  border-radius: 50%;
-  z-index: 1;
-}
-
-/* Place the container to the left */
-.left {
-  left: 0;
-}
-
-/* Place the container to the right */
-.right {
-  left: 50%;
-}
-
-/* Add arrows to the left container (pointing right) */
-.left::before {
-  content: " ";
-  height: 0;
-  position: absolute;
-  top: 22px;
-  width: 0;
-  z-index: 1;
-  right: 30px;
-  border: medium solid rgb(16, 15, 15);
-  border-width: 10px 0 10px 10px;
-  border-color: transparent transparent transparent white;
-}
-
-/* Add arrows to the right container (pointing left) */
-.right::before {
-  content: " ";
-  height: 0;
-  position: absolute;
-  top: 22px;
-  width: 0;
-  z-index: 1;
-  left: 30px;
-  border: medium solid rgb(2, 2, 2);
-  border-width: 10px 10px 10px 0;
-  border-color: transparent white transparent transparent;
-}
-
-/* Fix the circle for containers on the right side */
-.right::after {
-  left: -16px;
-}
-
-/* The actual content */
-.content {
-  padding: 20px 30px;
-  background-color: rgb(10, 10, 10);
-  position: relative;
-  border-radius: 6px;
-}
-
-/* Media queries - Responsive timeline on screens less than 600px wide */
-@media screen and (max-width: 600px) {
-/* Place the timelime to the left */
-  .timeline::after {
-    left: 31px;
-  }
-
-/* Full-width containers */
-  .container {
-    width: 100%;
-    padding-left: 70px;
-    padding-right: 25px;
-  }
-
-/* Make sure that all arrows are pointing leftwards */
-  .container::before {
-    left: 60px;
-    border: medium solid rgb(12, 12, 12);
-    border-width: 10px 10px 10px 0;
-    border-color: transparent rgb(6, 6, 6) transparent transparent;
-  }
-
-/* Make sure all circles are at the same spot */
-  .left::after, .right::after {
-    left: 15px;
-  }
-
-/* Make all right containers behave like the left ones */
-  .right {
-    left: 0%;
-  }
-}
-        </style>
-      </div>
-    </div>
-  </div>
-</div>
-<style>
-    /* Set height of body and the document to 100% to enable "full page tabs" */
-body, html {
-  height: 100%;
-  margin: 0;
-  font-family: Arial;
-}
-
-/* Style tab links */
-.tablink {
-  background-color: #555;
-  color: white;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  font-size: 17px;
-  width: 25%;
-}
-
-.tablink:hover {
-  background-color: #777;
-}
-
-/* Style the tab content (and add height:100% for full page content) */
-.tabcontent {
-  color: white;
-  display: none;
-  padding: 100px 20px;
-  height: 100%;
-}
-
-#Home {background-color: red;}
-#Movie News {background-color: green;}
-#Actors {background-color: blue;}
-#Movies {background-color: orange;}
 </style>
-<script>
-    function openPage(pageName, elmnt, color) {
-  // Hide all elements with class="tabcontent" by default */
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
+</head>
+<body>
+<div class="fluid-row">
+<div class="well span11 pagination-centered">
+<h1>Demos using timeknots</h1>
+<h5><a href='https://github.com/alangrafu/timeknots'>https://github.com/alangrafu/timeknots</a></h5>
+</div>
+</div>
+<div class="fluid-row">
+<div class="span3">
+ <h2>Stanley Kubrick's movies</h2>
+ <h5>Part of Kubrick's Filmography form Wikipedia</h5>
+ <div id="timeline1" style="width:500px;"></div>
+ <h2>Numeric, non date data</h2>
+ <div id="timelineNonDate" style="width:200px;"></div>
+</div>
+<div class="span6">
+ <h2>My schedule</h2>
+ <h5>Imaginary schedule in a vertical layout</h5>
+ <div id="timeline2" style="width:200px;height: 450px;"></div>
+ <h2>This week's agenda</h2>
+ <h5>Shows random meetings/free days</h5>
+ <div id="timeline3" style="width:500px;height: 200px;"></div>
+</div>
+</div>
+<script type="text/javascript">
+
+var nonDatedata = [
+ {"value": 224, "name": "Player 1" },
+ {"value": 249, "name": "Player 2" },
+ {"value": 297, "name": "Player 3" },
+ {"value": 388, "name": "Player 4" },
+ {"value": 397, "name": "Player 5" },
+ {"value": 418, "name": "Player 6" }
+];
+TimeKnots.draw("#timelineNonDate", nonDatedata, {dateDimension:false, color: "teal", width:500, showLabels: true, labelFormat: "%Y"});
+// has to be array of dictionaries that has to be of this format, each dictionary is point on timeline 
+var kurbickFilms = [{name:"Day of the Fight", date: "1951-04-26", img: "http://upload.wikimedia.org/wikipedia/en/thumb/c/c4/Day_of_the_Fight_title.jpg/215px-Day_of_the_Fight_title.jpg"},
+  {name:"The Seafarers", 	date:"1953-10-15", img: "http://upload.wikimedia.org/wikipedia/en/thumb/6/6c/Seafarers_title.jpg/225px-Seafarers_title.jpg"},
+  {name:"Lolita (1962 film)", 	date:"1962-06-13", img: "http://upload.wikimedia.org/wikipedia/en/thumb/7/72/LolitaPoster.jpg/215px-LolitaPoster.jpg"},
+  {name:"Fear and Desire", date:	"1953-03-31", img: "http://upload.wikimedia.org/wikipedia/en/f/f7/Fear_and_Desire_Poster.jpg"},
+  {name:"Paths of Glory", date:	"1957-12-25", img: "http://upload.wikimedia.org/wikipedia/en/thumb/b/bc/PathsOfGloryPoster.jpg/220px-PathsOfGloryPoster.jpg"},
+  {name:"A Clockwork Orange (film)", date:	"1971-12-19", img: "http://upload.wikimedia.org/wikipedia/en/thumb/4/48/Clockwork_orangeA.jpg/220px-Clockwork_orangeA.jpg"},
+  {name:"Killer's Kiss", date:	"1955-09-28", img: "http://upload.wikimedia.org/wikipedia/en/thumb/a/a6/KillersKissPoster.jpg/220px-KillersKissPoster.jpg"}
+];
+
+TimeKnots.draw("#timeline1", kurbickFilms, {dateFormat: "%B %Y", color: "#696", width:500, showLabels: true, labelFormat: "%Y"});
+
+var mySchedule = [{name:"Wake up", date: "2012-09-28T06:00:00"},
+  {name:"Breakfast", 	date:"2012-09-28T06:30:00"},
+  {name:"Leave kids at school", 	date:"2012-09-28T07:45:00"},
+  {name:"Check email", date:	"2012-09-28T08:00:00"},
+  {name:"Lunch", date:	"2012-09-28T11:30:00"},
+  {name:"Send report", date:	"2012-09-28T13:15:00"},
+  {name:"Pick kids", date:	"2012-09-28T17:16:00"},
+  {name:"Dinner", date:	"2012-09-28T18:13:00"},
+  {name:"Watch a movie", date:	"2012-09-28T20:16:00"},
+  {name:"Go to sleep", date:	"2012-09-28T23:00:00"}
+];
+TimeKnots.draw("#timeline2", mySchedule, {horizontalLayout: false, color: "#669", height: 450, width:200, showLabels: true, labelFormat:"%H:%M"});
+
+
+
+var agenda = new Array();
+var day = 86400000;
+var today = new Date();
+var series = ["Serie1", "Serie 2", "Serie 3"];
+for(var i=-3; i<4; i++){
+  var thisdate = new Date(today.getTime() + i*day).toUTCString();
+  var thiscolor = "#44a";
+  var thisname = "Free day";
+  if(Math.random()>0.5){
+   thiscolor = "#b00";
+   thisname = "Meeting";
   }
-
-  // Remove the background color of all tablinks/buttons
-  tablinks = document.getElementsByClassName("tablink");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].style.backgroundColor = "";
-  }
-
-  // Show the specific tab content
-  document.getElementById(pageName).style.display = "block";
-
-  // Add the specific color to the button used to open the tab content
-  elmnt.style.backgroundColor = color;
+  serieId = parseInt(Math.random()*100) %3;
+  thisseries = series[serieId];
+  var thiswidth = (i<0)?1:5;
+  agenda.push({date: thisdate, name: thisname,  series: thisseries })
 }
+TimeKnots.draw("#timeline3", agenda, {dateFormat: "%A", radius: 20});
 
-// Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
+
 </script>
 
-  
 </body>
-
 </html>
 
