@@ -116,6 +116,7 @@ Connect to the local Postgres database and store movies, directors, and actors i
 INSERT PICTURE HERE
 
 ### Run App
+The app is being run through app.py at the end. 
 
 ## How to Use the Project
 Provide instructions and examples so users/contributors can use the project.
