@@ -66,7 +66,9 @@ In order to create a design for the data we wanted stored, we created schemas - 
 <p align="center">
     <img src = "https://github.com/pbhan710/project03-group11/blob/main/Wireframe.png " width=50% height=50%>
  </p>
-<img src = "https://github.com/pbhan710/project03-group11/blob/main/Wireframe_Code.png " width=50% height=50%>
+<p align="center">
+    <img src = "https://github.com/pbhan710/project03-group11/blob/main/Wireframe_Code.png " width=50% height=50%>
+ </p>
 
 
 INSERT PICTURES HERE
