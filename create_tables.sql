@@ -25,11 +25,12 @@ DROP TABLE IF EXISTS actor;
 
 -- Actors and the movies in which they starred.
 CREATE TABLE "actor" (
-    "id" int NOT NULL,
+	"id" int NOT NULL,
+    "actor_id" int NOT NULL,
     "name" varchar NOT NULL,
     "profile_path" varchar,
     "movie_id" int NOT NULL,
-    "character" varchar NOT NULL,
+    "character" varchar,
 	PRIMARY KEY (id),
     FOREIGN KEY (movie_id) REFERENCES movie(id)
 );
@@ -39,7 +40,8 @@ DROP TABLE IF EXISTS director;
 
 -- Directors and movies that they directed.
 CREATE TABLE "director" (
-    "id" int NOT NULL,
+	"id" int NOT NULL,
+    "director_id" int NOT NULL,
     "name" varchar NOT NULL,
     "profile_path" varchar,
     "movie_id" int NOT NULL,

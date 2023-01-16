@@ -21,12 +21,12 @@ database_name = 'project03_group11_db'
 rds_connection_string = f'{protocol}://{username}:{password}@{host}:{port}/{database_name}'
 engine = create_engine(rds_connection_string)
 
-# Reflect an existing database into a new model
+# Reflect an existing database into ORM classes.
 Base = automap_base()
-# Reflect the tables
+# Reflect the tables.
 Base.prepare(engine, reflect=True)
 
-# Save reference to the table
+# Save reference to the table.
 Movie = Base.classes.movie
 Actor = Base.classes.actor
 Director = Base.classes.director
@@ -36,28 +36,54 @@ Director = Base.classes.director
 #################################################
 app = Flask(__name__)
 
-#################################################
+#################### #############################
 # Flask Routes
 #################################################
 
 # API Routes
 @app.route("/api/top10actors")
 def top10actors():
-   # Create our session (link) from Python to the database..
+   # Create our session (link) from Python to the database.
    session = Session(engine)
 
    # Return a list of top 10 actor names.
-   results = session.query(Actor.name).limit(10).all()
+   results = session.query(
+      Actor.actor_id, 
+      Actor.name, 
+      func.sum(Movie.revenue).label('Total')
+   ).filter(
+      Movie.id == Actor.movie_id
+   ).group_by(
+      Actor.actor_id, 
+      Actor.name
+   ).order_by(func.sum(Movie.revenue).desc()).limit(10).all()
 
    # Close session.
    session.close()
 
-   return jsonify(results)
+   return results
 
+@app.route("/api/actorsmovies/<actor_id>")
+def actorsmovies(actor_id):
+   session = Session(engine)
+
+   results = session.query(
+      Movie.title,
+      Movie.release_date,
+      Movie.poster_path,
+      Movie.revenue
+   ).filter(
+      Movie.id == Actor.movie_id,
+      Actor.actor_id == actor_id
+   ).order_by(Movie.release_date.desc()).all()
+
+   session.close()
+
+   return results
 # @app.route("/api/v1.0/justice-league/real_name/<real_name>")
 # def justice_league_by_real_name(real_name):
 #     """Fetch the Justice League character whose real_name matches
-#        the path variable supplied by the user, or a 404 if not."""
+#        the path vaiable supplied by the user, or a 404 if not."""
 
 #     canonicalized = real_name.replace(" ", "").lower()
 #     for character in justice_league_members:
