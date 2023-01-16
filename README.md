@@ -66,6 +66,8 @@ In order to create a design for the data we wanted stored, we created schemas - 
 
 ![alt text](https://github.com/pbhan710/project03-group11/blob/main/Wireframe.png?raw=true)
 
+![alt text](https://github.com/pbhan710/project03-group11/blob/main/Wireframe_Code.png?raw=true)
+
 INSERT PICTURES HERE
 
 ## How to Install and Run the Project
