@@ -64,6 +64,7 @@ Whilst creating our app, we started by building the back-end. In order to use th
 
 In order to create a design for the data we wanted stored, we created schemas - a user schema and a reviews schema. This ensured that the user was not already stored in the database in addition to hashing the stored password after using a virtual field to check that the original password matched the password confirmation.
 
+![alt text](https://github.com/pbhan710/project03-group11/blob/main/Wireframe.png)
 INSERT PICTURES HERE
 
 ## How to Install and Run the Project
