@@ -1,6 +1,5 @@
 function init(){
     d3v7.json('/api/top10actors').then(function(data) {
-        // 
         let firstActor = data[0];
         let firstActorID = firstActor[0];
     
@@ -16,12 +15,8 @@ function init(){
                     // 'Total Revenue': movie[3]
                 })
             }
-
-            console.log(movie_lst)
-    TimeKnots.draw("#timeline", movie_lst, {horizontalLayout: true, color: "#669", height: 450, width:500, showLabels: true, labelFormat:"%H:%M"});
+            TimeKnots.draw("#timeline", movie_lst, {horizontalLayout: true, color: "#669", height: 450, width:500, showLabels: true, labelFormat:"%H:%M"});
         });
-
-
     });
 }
 
