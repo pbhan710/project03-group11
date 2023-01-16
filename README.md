@@ -63,11 +63,11 @@ Some of the challenges we faced and features we hope to implement in the future:
 Whilst creating our app, we started by building the back-end. In order to use this, we used  HTML, Javascript and Postgresql Whilst setting up the app, Paul, Raja, Krishna and Corine took the lead in setting up the app.py, creating tables for sql, index HTML and files.
 
 In order to create a design for the data we wanted stored, we created schemas - a user schema and a reviews schema. This ensured that the user was not already stored in the database in addition to hashing the stored password after using a virtual field to check that the original password matched the password confirmation.
+<p align="center">
+    <img src = "https://github.com/pbhan710/project03-group11/blob/main/Wireframe.png " width=50% height=50%>
+ </p>
+<img src = "https://github.com/pbhan710/project03-group11/blob/main/Wireframe_Code.png " width=50% height=50%>
 
-<img src = "https://github.com/pbhan710/project03-group11/blob/main/Wireframe.png " width=50% height=50%>
-<!-- ![alt text](https://github.com/pbhan710/project03-group11/blob/main/Wireframe.png?raw=true)
- -->
-![alt text](https://github.com/pbhan710/project03-group11/blob/main/Wireframe_Code.png?raw=true)
 
 INSERT PICTURES HERE
 
