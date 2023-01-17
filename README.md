@@ -2,7 +2,7 @@
 Repository of code and supporting documentation for project.
 
 ## Before You Begin
-Please download The Movies Dataset at Kaggle and store this in a "Data" sub-repository of the project. These files contain metadata for all 45,000 movies listed in the Full MovieLens Dataset. The dataset consists of movies released on or before July 2017. Data points include cast, crew, plot keywords, budget, revenue, posters, release dates, languages, production companies, countries, TMDB vote counts and vote averages. This dataset also has files containing 26 million ratings from 270,000 users for all 45,000 movies. Ratings are on a scale of 1-5 and have been obtained from the official GroupLens website.
+Please download The Movies Dataset at Kaggle and store this in a "Data" sub-repository of the project. These files contain metadata for all 45,000 movies listed in the Full MovieLens Dataset. The dataset consists of movies released over a wide time range; however, for the purposes of this project we chose to only showcase data pertaining to the last decade. Data points include cast, crew, plot keywords, budget, revenue, posters, release dates, languages, production companies, countries, TMDB vote counts and vote averages. This dataset also has files containing 26 million ratings from 270,000 users for all 45,000 movies. Ratings are on a scale of 1-5 and have been obtained from the official GroupLens website.
 
 ## Content
 This dataset consists of the following files:
@@ -19,7 +19,7 @@ This dataset consists of the following files:
 - ratings_small.csv
     - The subset of 100,000 ratings from 700 users on 9,000 movies.
     
-The Full MovieLens Dataset consisting of 26 million ratings and 750,000 tag applications from 270,000 users on all the 45,000 movies in this dataset can be accessed here
+The Full MovieLens Dataset consisting of 26 million ratings and 750,000 tag applications from 270,000 users on all the 45,000 movies in this dataset can be accessed [here](https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset)
 
 ## Acknowledgements
 This dataset is an ensemble of data collected from TMDB and GroupLens.
