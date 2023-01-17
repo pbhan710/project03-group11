@@ -1,7 +1,12 @@
 # project03-group11
 Repository of code and supporting documentation for project.
 
-Contributers: Paul Han, Ramya Nivedha Raja, Corine Alida Daboiko, Krishna Musunuri, and Marquesia Atwater
+Contributers: 
+Team Lead: Paul Han 
+Ramya Nivedha Raja
+Corine Alida Daboiko
+Krishna Musunuri
+Marquesia Atwater
 
 ## Before You Begin
 Please download The Movies Dataset at Kaggle and store this in a "Data" sub-repository of the project. This data can be accessed via .csv files as well as through it's online API. This dataset includes contain metadata for 45,000 movies all listed in the Full MovieLens Dataset. For the purposes of this project we chose to only showcase data pertaining to the last decade. Data points include cast, crew, plot keywords, budget, revenue, posters, release dates, languages, production companies, countries, TMDB vote counts and vote averages. 
