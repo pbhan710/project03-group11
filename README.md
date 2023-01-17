@@ -71,7 +71,7 @@ Some of the challenges we faced over the course of our project:
 - While working on our Javascript using the Twitter Feed, we could not get a live feed. 
   - We have to search for Twitter documentation on it
 - Separating our HTML file into HTML and CSS for better readability
-  - We ran into errors when separating our styling elements of our website, which was solved by correctly defining the class in our CSS file.
+  - We ran into errors when separating our styling elements of our website, which resulted in us combining the two into a single file and correctly alligning and documenting throughout
 - Our imported JavaScript library, Timeknots, incorporated the d3 JavaScript library as well; however, it did not use the version of d3 we were accustomed to using. 
   - Hence we had to add and incorporate the new version of d3 into the TimeKnots library in order to correctly implement it. 
 - Ran into problems connecting Flask app.py with our .js JavaScript files
