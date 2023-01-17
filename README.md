@@ -15,15 +15,17 @@ In order to incorporate all of these elements and given the nature of the file t
     <img src = "https://github.com/pbhan710/project03-group11/blob/main/Wireframe_Code.png " width=50% height=50%>
  </p>
 
-We also created a wireframe of what we hoped our website would resemble. 
+We also created a wireframe of what we hoped our website would resemble:
 
 <p align="center">
     <img src = "https://github.com/pbhan710/project03-group11/blob/main/Wireframe.png " width=50% height=50%>
  </p>
 
-## Planning
+## Back-End Programming
 
-Whilst creating our app, we started by building the back-end. In order to use this, we used  HTML, Javascript and PostgreSQL. Whilst setting up the app, Paul, Raja, Krishna and Corine took the lead in setting up the app.py, creating tables for sql, index HTML and files.
+Whilst creating our website, we started by first understanding the API, which contained our data, and learning it's proper documentation. We then filtered our query results of what timeframe of movies we wanted access to. Considering there were 
+
+In order to use this, we used HTML, Javascript and PostgreSQL. Whilst setting up the app, Paul, Raja, Krishna and Corine took the lead in setting up the app.py, creating tables for sql, index HTML and files.
 
 In order to create a design for the data we wanted stored, we created schemas - a user schema and a reviews schema. This ensured that the user was not already stored in the database in addition to hashing the stored password after using a virtual field to check that the original password matched the password confirmation.
 
