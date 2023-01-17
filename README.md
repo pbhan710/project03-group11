@@ -30,7 +30,7 @@ Whilst creating our website, we started by first understanding the API, which co
 
 We then requested the filtered data by making calls to TMDB's APIs to retrieve and store data into lists. Then at the end of the query, we verified the total number of movies. 
 
-Once our data was filtered down based on these parameters, it was reduced to a dataset with _____ individual movie datapoints. We then used Jupyter Notebook and python to sort our results based on actors, directors, and movies, and load those into individual dataframes. These dataframes were then exported as three separate .csv files for easy upload into a SQL database. 
+Once our data was filtered down based on these parameters, it was reduced to a dataset with aproximately 2,500 individual movie datapoints with thousands more actors. We then used Jupyter Notebook and python to sort our results based on actors, directors, and movies, and load those into individual dataframes. These dataframes were then exported as three separate .csv files for easy upload into a SQL database. 
 
 We used PGAdmin to connect to the local Postgres database and store movies, directors, and actors into the respective tables. Tables within the local Postgres database should already be created before attempting. In order to create a design for the data we wanted stored, we created schemas - a user schema and a reviews schema. This ensured that the user was not already stored in the database in addition to hashing the stored password after using a virtual field to check that the original password matched the password confirmation. The layout of our data within our SQL database resembles the following ERD diagram:
 
