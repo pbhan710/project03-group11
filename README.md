@@ -23,7 +23,10 @@ We also created a wireframe of what we hoped our website would resemble:
 
 ## Back-End Programming
 
-Whilst creating our website, we started by first understanding the API, which contained our data, and learning it's proper documentation. We then filtered our query results of what timeframe of movies we wanted access to. Considering there were 
+Whilst creating our website, we started by first understanding the API, which contained our data, and learning it's proper documentation. We then filtered our query results of what timeframe of movies we wanted access to.  Given that there were 45,000 movie data entries in our dataset, we narrowed down our data based on the following parameters: 
+- Movies released within the time frame of January 2003 to January 2023
+- 
+
 
 In order to use this, we used HTML, Javascript and PostgreSQL. Whilst setting up the app, Paul, Raja, Krishna and Corine took the lead in setting up the app.py, creating tables for sql, index HTML and files.
 
