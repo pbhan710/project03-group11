@@ -66,10 +66,16 @@ Open Terminal
 
 ## Challenges
 Some of the challenges we faced over the course of our project: 
+- Learning how to read the API and query the information we needed
+  - We spend several hours learning and understanding how the API works and how we could best implement it in our project 
 - Too many pages and API could not run using Jupyter Notebook 
   - Had to switch to Visual Studio Code and filter our parameters even further
 - While working on our Javascript using the Twitter Feed, we could not get a live feed. 
   - We have to search for Twitter documentation on it
+- Separating our HTML file into HTML and CSS for better readability
+  - We ran into errors when separating our styling elements of our website, which was solved by correctly defining the class in our CSS file.
+- Our imported JavaScript library, Timeknots, incorporated the d3 JavaScript library as well; however, it did not use the version of d3 we were accustomed to using. 
+  - Hence we had to add and incorporate the new version of d3 into the TimeKnots library in order to correctly implement it. 
 - Ran into problems connecting Flask app.py with our .js JavaScript files
   - Better mapped out the process with a wireframe to expand our understanding: 
 <p align= "center">
