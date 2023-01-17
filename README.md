@@ -57,6 +57,12 @@ Once you have confirmed the tables have been created, right click on each table 
 
 After doing this for each table, run a new query as "select * from actor" to ensure the table has been loaded with the appropriate information. Repeat for all three tables. 
 
+#### For Windows
+Open GitBash on the cooresponding folder in your home directory and run "python app.py" then click on the IP address link that appears to be taken to the website. 
+
+#### For MAC
+Open Terminal 
+
 ## Challenges
 Some of the challenges we faced and features we hope to implement in the future:
 - Too many pages and API could not run using Jupyter Notebook (had to use Visual Code )
