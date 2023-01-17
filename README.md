@@ -1,8 +1,6 @@
 # project03-group11
 Repository of code and supporting documentation for project.
 
-(not done yet, will finish writing/editing in morning - ramya)
-
 Contributers: Paul Han, Ramya Nivedha Raja, Corine Alida Daboiko, Krishna Musunuri, and Marquesia Atwater
 
 ## Before You Begin
@@ -62,7 +60,7 @@ After doing this for each table, run a new query as "select * from actor" to ens
 Open GitBash on the cooresponding folder in your home directory and run "python app.py" then click on the IP address link that appears to be taken to the website. 
 
 #### For MAC
-Open Terminal 
+Open Terminal on the cooresponding folder in your home directory and run "app.py" then click on the IP address link that appears to be taken to the website.
 
 ## Challenges
 Some of the challenges we faced over the course of our project: 
@@ -93,8 +91,8 @@ Here are a few basic details to help better understand the structure of the API
     - Full URL of TMDB's Discover API which includes TMDB properties to filter movies by. 
     - Example URL: https://api.themoviedb.org/3/discover/movie?api_key=%7Bapi_key%7D&release_date.gte=2010-01-01&release_date.lte=2010-01-31%C2%AEion=us&with_release_type=2%7C3&vote_count.gte=1&sort_by=popularity.desc&page=1
 - movie_target_url
--   Full URL of TMDB's Movie API which includes the TMDB movie. 
--   Example URL: https://api.themoviedb.org/3/movie/550?api_key=%7Bapi_key%7D
+    - Full URL of TMDB's Movie API which includes the TMDB movie. 
+    - Example URL: https://api.themoviedb.org/3/movie/550?api_key=%7Bapi_key%7D
 #### TMDB Properties
 - release_date.gte={release_start_date}
     - Earliest date of movies' release dates to search for using TMDB's Discover API.
