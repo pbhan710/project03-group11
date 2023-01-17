@@ -26,12 +26,19 @@ We also created a wireframe of what we hoped our website would resemble:
 
 Whilst creating our website, we started by first understanding the API, which contained our data, and learning it's proper documentation. We then filtered our query results of what timeframe of movies we wanted access to.  Given that there were 45,000 movie data entries in our dataset, we narrowed down our data based on the following parameters: 
 - Movies released within the time frame of January 2003 to January 2023
-- 
+- Movies only released in English language
+- Movies that adhered to a relatively high popularity rating (In other words, movies that were not realtively well-known were not considered)
+
+Once our data was filtered down based on these parameters, it was reduced to a dataset with _____ individual movie datapoints. We then used Jupyter Notebook and python to sort our results based on actors, directors, and movies. This sorted data was then exported as three separate .csv files for easy upload into a SQL database. 
+
+In order to create a design for the data we wanted stored, we created schemas - a user schema and a reviews schema. This ensured that the user was not already stored in the database in addition to hashing the stored password after using a virtual field to check that the original password matched the password confirmation.
+
+Then we queried the information we wanted using routes via SQLAlchemy in Flask using an app.py. These routes returned jsonified versions of our results that were then read by our JavaScript file using the d3 library. 
 
 
 In order to use this, we used HTML, Javascript and PostgreSQL. Whilst setting up the app, Paul, Raja, Krishna and Corine took the lead in setting up the app.py, creating tables for sql, index HTML and files.
 
-In order to create a design for the data we wanted stored, we created schemas - a user schema and a reviews schema. This ensured that the user was not already stored in the database in addition to hashing the stored password after using a virtual field to check that the original password matched the password confirmation.
+
 
 ## How to Install and Run the Project
 
