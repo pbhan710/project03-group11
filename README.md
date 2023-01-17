@@ -31,7 +31,12 @@ Whilst creating our website, we started by first understanding the API, which co
 
 Once our data was filtered down based on these parameters, it was reduced to a dataset with _____ individual movie datapoints. We then used Jupyter Notebook and python to sort our results based on actors, directors, and movies. This sorted data was then exported as three separate .csv files for easy upload into a SQL database. 
 
-In order to create a design for the data we wanted stored, we created schemas - a user schema and a reviews schema. This ensured that the user was not already stored in the database in addition to hashing the stored password after using a virtual field to check that the original password matched the password confirmation.
+In order to create a design for the data we wanted stored, we created schemas - a user schema and a reviews schema. This ensured that the user was not already stored in the database in addition to hashing the stored password after using a virtual field to check that the original password matched the password confirmation. The layout of our data within our SQL database resembles the following ERD diagram:
+
+<p align = "center">
+  <img src="https://github.com/pbhan710/project03-group11/blob/main/ERD.png ">
+ </p>
+   
 
 Then we queried the information we wanted from our database using routes via SQLAlchemy in Flask. These routes returned jsonified versions of our results that were then read by our JavaScript file using the d3 library. 
 
