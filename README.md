@@ -25,7 +25,7 @@ We also created a wireframe of what we hoped our website would resemble:
 ## Back-End Programming
 
 Whilst creating our website, we started by first understanding the API, which contained our data, and learning it's proper documentation. We then filtered our query results of what timeframe of movies we wanted access to.  Given that there were 45,000 movie data entries in our dataset, we narrowed down our data based on the following parameters: 
-- Movies released within the time frame of January 2003 to January 2023
+- Movies released within the time frame of January 2013 to January 2023
 - Movies only released in English language
 - Movies that adhered to a relatively high popularity rating (In other words, movies that were not relatively well-known were not considered)
 
@@ -35,7 +35,7 @@ In order to create a design for the data we wanted stored, we created schemas - 
 
 Then we queried the information we wanted from our database using routes via SQLAlchemy in Flask. These routes returned jsonified versions of our results that were then read by our JavaScript file using the d3 library. 
 
-The queried results would return information illustrating a top ten list of the top movies, directors, and actors from the dataset. Then after reading the jsonified results, we displayed this information on our website in HTML. Also occuring at the same time, a different JavaScript library, TimeKnots, organized the cooresponding actor or directors filmography on a timeline and displayed it next to them. 
+The queried results would return information illustrating a top ten list of the top movies, directors, and actors from the dataset. Then after reading the jsonified results, we displayed this information on our website in HTML. Also occuring at the same time, a different JavaScript library, [TimeKnots](https://github.com/alangrafu/timeknots), organized the cooresponding actor or directors filmography on a timeline and displayed it next to them. 
 
 ## How to Install and Run the Project
 
