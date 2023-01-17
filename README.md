@@ -1,7 +1,7 @@
 # project03-group11
 Repository of code and supporting documentation for project. 
 
-Team Lead: Paul Han 
+Project Manager: Paul Han 
 
 Contributers: Ramya Nivedha Raja, Corine Alida Daboiko, Krishna Musunuri, Marquesia Atwater
 
@@ -22,6 +22,7 @@ We also created a wireframe of what we hoped our website would resemble:
 <p align="center">
     <img src = "https://github.com/pbhan710/project03-group11/blob/main/Wireframe.png " width=50% height=50%>
  </p>
+While we did not accomplish the above wireframe in it's entirety over the course of our project, we successfully loaded in our data compliling a list of the top ten actors from 2013 to 2023 and showcasing their respective filmographies via timelines. 
 
 ## Back-End Programming
 
@@ -70,12 +71,13 @@ Some of the challenges we faced over the course of our project:
   - We spend several hours learning and understanding how the API works and how we could best implement it in our project 
 - Too many pages and API could not run using Jupyter Notebook 
   - Had to switch to Visual Studio Code and filter our parameters even further
-- While working on our Javascript using the Twitter Feed, we could not get a live feed. 
+- While working on our Javascript using the Twitter Feed, we could not get a live feed 
   - We have to search for Twitter documentation on it
 - Separating our HTML file into HTML and CSS for better readability
   - We ran into errors when separating our styling elements of our website, which resulted in us combining the two into a single file and correctly alligning and documenting throughout
 - Our imported JavaScript library, Timeknots, incorporated the d3 JavaScript library as well; however, it did not use the version of d3 we were accustomed to using. 
-  - Hence we had to add and incorporate the new version of d3 into the TimeKnots library in order to correctly implement it. 
+  - Hence we had to add and incorporate the new version of d3 into the TimeKnots library in order to correctly implement it
+- We were only able to successfully run the app.py file on one of our team members laptops; thus making it difficult to collectively test and run code
 - Ran into problems connecting Flask app.py with our .js JavaScript files
   - Better mapped out the process with a wireframe to expand our understanding: 
 <p align= "center">
@@ -108,6 +110,17 @@ Here are a few basic details to help better understand the structure of the API
 - vote_count.gte=1: Minimum number of votes by TMDB users on movies to search for in TMDB's Discover API. Set to 1 to exclude movies with 0 votes, reducing overall search results.
 - sort_by=popularity.desc: Sort movies pulled through TMDB's Discover API by TMDB's popularity metric among TMDB users, descending.
 - append_to_results=credits: Add to the result of an API call more details. This is used when making an API call to TMDB's Movie API to also add details on the cast/crew of the movie.
+
+### Future Improvements
+- Include additional information about each actor such as:
+  - Total movie revenue generated
+  - Characters they played in each movie on the timeline 
+- Create/Incorporate different filters in the creation of the top ten list, find ways to base list on different parameters such as genre, gender, etc. 
+- Build out a similar structure as we did for actors for directors as well
+- Improve the formatting and color scheme of the project to a higher quality
+- Provide more details on the movies themselves as they populate the timeline 
+- Default to the Movie News Tab
+- In build_database.ipynb, we created a large for loop to load our dataframes with information from the API. It is slightly hard coded in that, sometimes there is a loss of connection. When that happens you have to go and look at what page it stopped loading the data at and then re-run it from wherever it left off to ensure all of the remaining data is stored. Given that we only needed to store the data once, we did not look into further code impplementations that would help us run this more efficiently. 
 
 
 ### Acknowledgements
