@@ -1,13 +1,19 @@
 # project03-group11
 Repository of code and supporting documentation for project.
 
+Contributers: Paul Han, Nivedha Raja, Corine Alida Daboiko, Krishna Musunuri, and Marquesia Atwater
+
 ## Before You Begin
 Please download The Movies Dataset at Kaggle and store this in a "Data" sub-repository of the project. This data can be accessed via .csv files as well as through it's online API. This dataset includes contain metadata for 45,000 movies all listed in the Full MovieLens Dataset. For the purposes of this project we chose to only showcase data pertaining to the last decade. Data points include cast, crew, plot keywords, budget, revenue, posters, release dates, languages, production companies, countries, TMDB vote counts and vote averages. 
  
 ## Project Description
 We were inspired to embark on this project upon learning that two of our group members are relatively uncultured when it comes to pop culture that stems from movies and films. With limited knowledge of recent popular movies and actors we sought to create a website that would easily display the top 10 actors and directors from a database of relevant movies. With the cooresponding actors and directors, we would also display a timeline detailing their career and filmography on the same page. 
 
-In order to incorporate all of these elements we decided to combine a multitude of web development tools including HTML, CSS, JavaScript, Jupyter Notebook, Python, and SQL. 
+In order to incorporate all of these elements we decided to combine a multitude of web development tools including HTML, CSS, JavaScript, Jupyter Notebook, Python, and SQL. We sought to accomplish the following wire frame with our prohect implementation: 
+
+<p align="center">
+    <img src = "https://github.com/pbhan710/project03-group11/blob/main/Wireframe_Code.png " width=50% height=50%>
+ </p>
 
 Some of the challenges we faced and features we hope to implement in the future:
 - Too many pages and API could not run using Jupyter Notebook (had to use Visual Code )
@@ -30,12 +36,7 @@ In order to create a design for the data we wanted stored, we created schemas - 
 <p align="center">
     <img src = "https://github.com/pbhan710/project03-group11/blob/main/Wireframe.png " width=50% height=50%>
  </p>
-<p align="center">
-    <img src = "https://github.com/pbhan710/project03-group11/blob/main/Wireframe_Code.png " width=50% height=50%>
- </p>
 
-
-INSERT PICTURES HERE
 
 ## How to Install and Run the Project
 
