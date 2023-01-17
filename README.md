@@ -1,8 +1,9 @@
 # project03-group11
 Repository of code and supporting documentation for project.
+
 (not done yet, will finish writing/editing in morning - ramya)
 
-Contributers: Paul Han, Nivedha Raja, Corine Alida Daboiko, Krishna Musunuri, and Marquesia Atwater
+Contributers: Paul Han, Ramya Nivedha Raja, Corine Alida Daboiko, Krishna Musunuri, and Marquesia Atwater
 
 ## Before You Begin
 Please download The Movies Dataset at Kaggle and store this in a "Data" sub-repository of the project. This data can be accessed via .csv files as well as through it's online API. This dataset includes contain metadata for 45,000 movies all listed in the Full MovieLens Dataset. For the purposes of this project we chose to only showcase data pertaining to the last decade. Data points include cast, crew, plot keywords, budget, revenue, posters, release dates, languages, production companies, countries, TMDB vote counts and vote averages. 
@@ -64,9 +65,16 @@ Open GitBash on the cooresponding folder in your home directory and run "python 
 Open Terminal 
 
 ## Challenges
-Some of the challenges we faced and features we hope to implement in the future:
-- Too many pages and API could not run using Jupyter Notebook (had to use Visual Code )
-- While working on our Javascript using the Twitter Feed, we could not get a live feed. We have to search for Twitter documentation on it.
+Some of the challenges we faced over the course of our project: 
+- Too many pages and API could not run using Jupyter Notebook 
+  - Had to switch to Visual Studio Code and filter our parameters even further
+- While working on our Javascript using the Twitter Feed, we could not get a live feed. 
+  - We have to search for Twitter documentation on it
+- Ran into problems connecting Flask app.py with our .js JavaScript files
+  - Better mapped out the process with a wireframe to expand our understanding: 
+<p align= "center">
+  <img src= "https://github.com/pbhan710/project03-group11/blob/main/Wireframe_flaskto.js.png">
+</p>
  
 ### API Documentation Basics
 Here are a few basic details to help better understand the structure of the API
