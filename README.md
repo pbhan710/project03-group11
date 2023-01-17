@@ -47,11 +47,14 @@ Finally, our website is being run through our Flask app.py at the end.
 
 ## How to Install and Run the Project
 
-Provide a step-by-step description of how to get the development environment set and running.
-Set up:  
-- Create a Google Cloud Storage Bucket 
-- Download json private key for a Service Account and have it available 
-- Set an environment variable : export GOOGLE_APPLICATION_CREDENTIALS=path/to/your-key.json
+Download all files from this GitHub repository or clone this repository on your desktop. 
+
+First 
+
+## Challenges
+Some of the challenges we faced and features we hope to implement in the future:
+- Too many pages and API could not run using Jupyter Notebook (had to use Visual Code )
+- While working on our Javascript using the Twitter Feed, we could not get a live feed. We have to search for Twitter documentation on it.
  
 ### API Documentation Basics
 Here are a few basic details to help better understand the structure of the API
@@ -81,17 +84,6 @@ Here are a few basic details to help better understand the structure of the API
 - append_to_results=credits: Add to the result of an API call more details. This is used when making an API call to TMDB's Movie API to also add details on the cast/crew of the movie.
 
 
-
-## How to Use the Project
-Provide instructions and examples so users/contributors can use the project.
-Users are able to query or request information from our Database.
-For instance, if one would like to learn about the top 10  movies for 2013-01-01 to 2023-01-14, they can pull it from the movies_lst by using movie “id”or “title” and “popularity”.
-
-### Challenges
-Some of the challenges we faced and features we hope to implement in the future:
-- Too many pages and API could not run using Jupyter Notebook (had to use Visual Code )
-- While working on our Javascript using the Twitter Feed, we could not get a live feed. We have to search for Twitter documentation on it.
-
 ### Acknowledgements
 This dataset is an ensemble of data collected from TMDB and GroupLens.
 
@@ -100,5 +92,7 @@ The Full MovieLens Dataset consisting of 26 million ratings and 750,000 tag appl
 The Movie Details, Credits and Keywords have been collected from the TMDB Open API. This product uses the TMDb API but is not endorsed or certified by TMDb. Their API also provides access to data on many additional movies, actors and actresses, crew members, and TV shows. You can try it for yourself here.
 
 The Movie Links and Ratings have been obtained from the Official GroupLens website. The files are a part of the dataset available [here](https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset)Other Sources
+
+We used the [Timeknots](https://github.com/alangrafu/timeknots) JavaScript Library
 
 
