@@ -2,10 +2,15 @@
 Repository of code and supporting documentation for project.
 
 Contributers: 
+
 Team Lead: Paul Han 
+
 Ramya Nivedha Raja
+
 Corine Alida Daboiko
+
 Krishna Musunuri
+
 Marquesia Atwater
 
 ## Before You Begin
