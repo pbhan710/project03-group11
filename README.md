@@ -3,28 +3,16 @@ Repository of code and supporting documentation for project.
 
 ## Before You Begin
 Please download The Movies Dataset at Kaggle and store this in a "Data" sub-repository of the project. This data can be accessed via .csv files as well as through it's online API. This dataset includes contain metadata for 45,000 movies all listed in the Full MovieLens Dataset. For the purposes of this project we chose to only showcase data pertaining to the last decade. Data points include cast, crew, plot keywords, budget, revenue, posters, release dates, languages, production companies, countries, TMDB vote counts and vote averages. 
-    
-### Acknowledgements
-This dataset is an ensemble of data collected from TMDB and GroupLens.
-
-The Full MovieLens Dataset consisting of 26 million ratings and 750,000 tag applications from 270,000 users on all the 45,000 movies in this dataset can be accessed [here](https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset)
-
-The Movie Details, Credits and Keywords have been collected from the TMDB Open API. This product uses the TMDb API but is not endorsed or certified by TMDb. Their API also provides access to data on many additional movies, actors and actresses, crew members, and TV shows. You can try it for yourself here.
-
-The Movie Links and Ratings have been obtained from the Official GroupLens website. The files are a part of the dataset available [here](https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset)
-
-
+ 
 ## Project Description
-What the application does,
-- Bootstrap: "Sleek, intuitive, and powerful front-end framework for faster and easier web development."
-- React: "React is a JavaScript library for building user interfaces."
-- A student HTML project: "Demonstration site showcasing HTML, CSS, jQuery, and SQL Database."
+We were inspired to embark on this project upon learning that two of our group members are relatively uncultured when it comes to pop culture that stems from movies and films. With limited knowledge of recent popular movies and actors we sought to create a website that would easily display the top 10 actors and directors from a database of relevant movies. With the cooresponding actors and directors, we would also display a timeline detailing their career and filmography on the same page. 
+
+In order to incorporate all of these elements we decided to combine a multitude of web development tools including HTML, CSS, JavaScript, Jupyter Notebook, Python, and SQL. 
 
 Some of the challenges we faced and features we hope to implement in the future:
 - Too many pages and API could not run using Jupyter Notebook (had to use Visual Code )
 - While working on our Javascript using the Twitter Feed, we could not get a live feed. We have to search for Twitter documentation on it.
 
-## Table of Contents
 - API (Google API)
 - Database (SQL)
 - App.py
@@ -106,13 +94,13 @@ Provide instructions and examples so users/contributors can use the project.
 Users are able to query or request information from our Database.
 For instance, if one would like to learn about the top 10  movies for 2013-01-01 to 2023-01-14, they can pull it from the movies_lst by using movie “id”or “title” and “popularity”.
 
-## Include Credits
-Other Sources
-Our Names: 
-Paul Han
-Nivedha Raja
-Krishna Musunuri
-Corine Alida Daboiko
-Marquesia Atwater
+### Acknowledgements
+This dataset is an ensemble of data collected from TMDB and GroupLens.
+
+The Full MovieLens Dataset consisting of 26 million ratings and 750,000 tag applications from 270,000 users on all the 45,000 movies in this dataset can be accessed [here](https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset)
+
+The Movie Details, Credits and Keywords have been collected from the TMDB Open API. This product uses the TMDb API but is not endorsed or certified by TMDb. Their API also provides access to data on many additional movies, actors and actresses, crew members, and TV shows. You can try it for yourself here.
+
+The Movie Links and Ratings have been obtained from the Official GroupLens website. The files are a part of the dataset available [here](https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset)Other Sources
 
 
