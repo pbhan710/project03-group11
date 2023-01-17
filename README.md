@@ -7,36 +7,25 @@ Contributers: Paul Han, Nivedha Raja, Corine Alida Daboiko, Krishna Musunuri, an
 Please download The Movies Dataset at Kaggle and store this in a "Data" sub-repository of the project. This data can be accessed via .csv files as well as through it's online API. This dataset includes contain metadata for 45,000 movies all listed in the Full MovieLens Dataset. For the purposes of this project we chose to only showcase data pertaining to the last decade. Data points include cast, crew, plot keywords, budget, revenue, posters, release dates, languages, production companies, countries, TMDB vote counts and vote averages. 
  
 ## Project Description
-We were inspired to embark on this project upon learning that two of our group members are relatively uncultured when it comes to pop culture that stems from movies and films. With limited knowledge of recent popular movies and actors we sought to create a website that would easily display the top 10 actors and directors from a database of relevant movies. With the cooresponding actors and directors, we would also display a timeline detailing their career and filmography on the same page. 
+We were inspired to embark on this project upon learning that two of our group members are relatively uncultured when it comes to pop culture that stems from movies and films. With limited knowledge of recent popular movies and actors, we sought to create a website that would easily display the top 10 actors and directors from a database of relevant movies. We would also display a timeline detailing their career and filmography on the same page with the cooresponding actors and directors.
 
-In order to incorporate all of these elements we decided to combine a multitude of web development tools including HTML, CSS, JavaScript, Jupyter Notebook, Python, and SQL. We sought to accomplish the following wire frame with our prohect implementation: 
+In order to incorporate all of these elements and given the nature of the file types we had access to, we decided to combine a multitude of web development tools including HTML, CSS, JavaScript, Jupyter Notebook, Python, Flask, SQLAlchemy, and SQL. We sought to accomplish the following wire frame with our project implementation: 
 
 <p align="center">
     <img src = "https://github.com/pbhan710/project03-group11/blob/main/Wireframe_Code.png " width=50% height=50%>
  </p>
 
-Some of the challenges we faced and features we hope to implement in the future:
-- Too many pages and API could not run using Jupyter Notebook (had to use Visual Code )
-- While working on our Javascript using the Twitter Feed, we could not get a live feed. We have to search for Twitter documentation on it.
+We also created a wireframe of what we hoped our website would resemble. 
 
-- API (Google API)
-- Database (SQL)
-- App.py
-- Index.HTML
-- JavaScript
-- Flask
-- CSS
-- GitHub
+<p align="center">
+    <img src = "https://github.com/pbhan710/project03-group11/blob/main/Wireframe.png " width=50% height=50%>
+ </p>
 
 ## Planning
 
 Whilst creating our app, we started by building the back-end. In order to use this, we used  HTML, Javascript and PostgreSQL. Whilst setting up the app, Paul, Raja, Krishna and Corine took the lead in setting up the app.py, creating tables for sql, index HTML and files.
 
 In order to create a design for the data we wanted stored, we created schemas - a user schema and a reviews schema. This ensured that the user was not already stored in the database in addition to hashing the stored password after using a virtual field to check that the original password matched the password confirmation.
-<p align="center">
-    <img src = "https://github.com/pbhan710/project03-group11/blob/main/Wireframe.png " width=50% height=50%>
- </p>
-
 
 ## How to Install and Run the Project
 
@@ -94,6 +83,11 @@ The app is being run through app.py at the end.
 Provide instructions and examples so users/contributors can use the project.
 Users are able to query or request information from our Database.
 For instance, if one would like to learn about the top 10  movies for 2013-01-01 to 2023-01-14, they can pull it from the movies_lst by using movie “id”or “title” and “popularity”.
+
+### Challenges
+Some of the challenges we faced and features we hope to implement in the future:
+- Too many pages and API could not run using Jupyter Notebook (had to use Visual Code )
+- While working on our Javascript using the Twitter Feed, we could not get a live feed. We have to search for Twitter documentation on it.
 
 ### Acknowledgements
 This dataset is an ensemble of data collected from TMDB and GroupLens.
