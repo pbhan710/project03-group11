@@ -1,13 +1,413 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Test</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+    <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet">
+    <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <title>Cinema Coders</title>
 </head>
+
 <body>
-    <div id="timeline" style="width:200px;height:450px;"></div>
+    <div class="header">
+        <h1>WELCOME TO OUR MOVIE PAGE</h1>
+        <img src="https://assets.videomaker.com/2021/04/vintage-film-projector-and-film-screening-FSH2PGV-scaled.jpg" alt="First Video Camera" width="100%">
+        <br>
+    </div>
+
+    <div class="row">
+        <button class="tablink" onclick="openPage('Movie News', this, 'green')" id="defaultOpen">Movie News</button>
+        <button class="tablink" onclick="openPage('Actors', this, 'blue')">Actors</button>
+        <button class="tablink" onclick="openPage('Directors', this, 'orange')">Directors</button>
+
+        <style>
+            /* Set height of body and the document to 100% to enable "full page tabs" */
+            body, html {
+                height: 100%;
+                margin: 0;
+                font-family: Arial;
+            }
+
+            /* Style tab links */
+            .tablink {
+                background-color: #555;
+                color: white;
+                float: left;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                padding: 14px 16px;
+                font-size: 17px;
+                width: 25%;
+            }
+
+            .tablink:hover {
+                background-color: #777;
+            }
+
+            /* Style the tab content (and add height:100% for full page content) */
+            .tabcontent {
+                color: white;
+                display: none;
+                padding: 20px 20px;
+                height: 100%;
+            }
+
+            #Movie News {background-color: green;}
+            #Actors {background-color: blue;}
+            #Directors {background-color: orange;}
+        </style>
+
+        <!-- Interactivity to open tabs. -->
+        <script> 
+            function openPage(pageName, elmnt, color) {
+                // Hide all elements with class="tabcontent" by default */
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+
+                // Remove the background color of all tablinks/buttons
+                tablinks = document.getElementsByClassName("tablink");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].style.backgroundColor = "";
+                }
+
+                // Show the specific tab content
+                document.getElementById(pageName).style.display = "block";
+
+                // Add the specific color to the button used to open the tab content
+                elmnt.style.backgroundColor = color;
+            }
+
+            // Get the element with id="defaultOpen" and click on it
+            document.getElementById("defaultOpen").click();
+        </script>
+    </div>
+
+    <div id="Movie News" class="tabcontent">
+        <h3>Movie News</h3>
+        <p>Latest Movie Updates!</p> 
+        <a class="twitter-timeline" data-theme="dark" href="https://twitter.com/TwitterMovies?ref_src=twsrc%5Etfw">Tweets by TwitterMovies</a> 
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+
+    <div id="Actors" class="tabcontent">
+        <h3>Top 10 Actors</h3>
+        <p>Top actors by total movie revenue played in over the last 10 years.</p>
+
+        <div class="row">
+            <div class="column"></div>
+            <div id="timeline" style="width:200px;"></div>
+        </div>
+        <!-- Container for the image gallery -->
+        <div class="container">
+            <!-- Next and previous buttons -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+            <!-- Image text -->
+            <div class="caption-container">
+                <p id="caption"></p>
+            </div>
+
+            <!-- Thumbnail images -->
+            <div class="row"></div>
+
+            <!-- Styles of thumbnail images for actors-->
+            <style>  
+                *{
+                    box-sizing: border-box;
+                }
+
+                /* Position the image container (needed to position the left and right arrows) */
+                .container {
+                    position: relative;
+                }
+
+                /* Hide the images by default */
+                .mySlides {
+                    display: none;
+                }
+
+                /* Add a pointer when hovering over the thumbnail images */
+                .cursor {
+                    cursor: pointer;
+                }
+
+                /* Next & previous buttons */
+                .prev,
+                .next {
+                    cursor: pointer;
+                    position: absolute;
+                    top: 40%;
+                    width: auto;
+                    padding: 16px;
+                    margin-top: -50px;
+                    color: white;
+                    font-weight: bold;
+                    font-size: 20px;
+                    border-radius: 0 3px 3px 0;
+                    user-select: none;
+                    -webkit-user-select: none;
+                }
+
+                /* Position the "next button" to the right */
+                .next {
+                    right: 0;
+                    border-radius: 3px 0 0 3px;
+                }
+
+                /* On hover, add a black background color with a little bit see-through */
+                .prev:hover,
+                .next:hover {
+                    background-color: rgba(0, 0, 0, 0.8);
+                }
+
+                /* Number text (1/3 etc) */
+                .numbertext {
+                    color: #f2f2f2;
+                    font-size: 12px;
+                    padding: 8px 12px;
+                    position: absolute;
+                    top: 0;
+                }
+
+                /* Container for image text */
+                .caption-container {
+                    text-align: center;
+                    background-color: #222;
+                    padding: 2px 16px;
+                    color: white;
+                    width: "50%";
+                }
+
+                .row:after {
+                    content: "";
+                    display: table;
+                    clear: both;
+                }
+
+                /* Six columns side by side */
+                .column {
+                    float: left;
+                    width: 16.66%;
+                }
+
+                /* Add a transparency effect for thumnbail images */
+                .demo {
+                    opacity: 0.6;
+                }
+
+                .active,
+                .demo:hover {
+                    opacity: 1;
+                }
+            </style>    
+        </div>
+    </div>
+
+    <div id="Directors" class="tabcontent">
+        <h3>Directors</h3>
+        <p>Top Directors by Movie Revenue over the Last 10 Years</p>
+
+        <div class="row">
+            <div class="column"></div>
+            <div class="column">
+                <div class="timeline" style="width:200px;">
+                    <h2>Movies by Actor</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- Container for the image gallery -->
+        <div class="container">
+        <!-- Full-width images with number text -->
+            <!-- Next and previous buttons -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+            <!-- Styles of thumbnail images for directors-->
+            <style>  
+                *{
+                    box-sizing: border-box;
+                }
+
+                /* Position the image container (needed to position the left and right arrows) */
+                .container {
+                    position: relative;
+                }
+
+                /* Hide the images by default */
+                .mySlides {
+                    display: none;
+                }
+
+                /* Add a pointer when hovering over the thumbnail images */
+                .cursor {
+                    cursor: pointer;
+                }
+
+                /* Next & previous buttons */
+                .prev,
+                .next {
+                    cursor: pointer;
+                    position: absolute;
+                    top: 40%;
+                    width: auto;
+                    padding: 16px;
+                    margin-top: -50px;
+                    color: white;
+                    font-weight: bold;
+                    font-size: 20px;
+                    border-radius: 0 3px 3px 0;
+                    user-select: none;
+                    -webkit-user-select: none;
+                }
+
+                /* Position the "next button" to the right */
+                .next {
+                    right: 0;
+                    border-radius: 3px 0 0 3px;
+                }
+
+                /* On hover, add a black background color with a little bit see-through */
+                .prev:hover,
+                .next:hover {
+                    background-color: rgba(0, 0, 0, 0.8);
+                }
+
+                /* Number text (1/3 etc) */
+                .numbertext {
+                    color: #f2f2f2;
+                    font-size: 12px;
+                    padding: 8px 12px;
+                    position: absolute;
+                    top: 0;
+                }
+
+                /* Container for image text */
+                .caption-container {
+                    text-align: center;
+                    background-color: #222;
+                    padding: 2px 16px;
+                    color: white;
+                    width: "50%";
+                }
+
+                .row:after {
+                    content: "";
+                    display: table;
+                    clear: both;
+                }
+
+                /* Six columns side by side */
+                .column {
+                    float: left;
+                    width: 16.66%;
+                }
+
+                /* Add a transparency effect for thumnbail images */
+                .demo {
+                    opacity: 0.6;
+                }
+
+                .active,
+                .demo:hover {
+                    opacity: 1;
+                }
+            </style>
+
+            <!-- Image text -->
+            <div class="caption-container">
+                <p id="caption"></p>
+            </div>
+
+            <!-- Thumbnail images -->
+            <div class="row"></div>
+
+            <!-- Background color of "Directors" -->
+            <style> 
+                * {
+                    box-sizing: border-box;
+                }
+
+                /* Set a background color */
+                body {
+                    background-color: #474e5d;
+                    font-family: Helvetica, sans-serif;
+                }
+            </style>
+        </div>  
+    </div>
+    </div>
+
+    <!-- Actor/director slideshow: Click arrow buttons -->
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Next/previous controls
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("demo");
+            let captionText = document.getElementById("caption");
+
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+            captionText.innerHTML = dots[slideIndex-1].alt;
+
+            console.log(slides.length)
+            d3v7.json('/api/top10actors').then(function(data) {
+                for (let j = 1; j < data.length; j++) {
+                    if (j = slideIndex - 1) {
+                        let actor = data[j];
+                        let actorID = actor[0];
+                        let actorName = actor[1];
+
+                        d3.select("#Actors").select(".row").select("#timeline").remove()
+
+                        d3.select("#Actors").select(".row").append("div").attr("id", "timeline").attr("style", "width:200px;")
+
+                        d3v7.json(`/api/actorsmovies/${actorID}`).then(function(data) {
+                            let movie_lst = []; // Create an empty array.
+                            for (let k = 0; k < data.length; k++) {
+                                let movie = data[k]
+                                let releaseDate = new Date(movie[1])
+                                movie_lst.push({
+                                    'name': movie[0], 
+                                    'date': releaseDate,
+                                    'img': `https://image.tmdb.org/t/p/w185${movie[2]}`
+                                })
+                            }
+                            
+                            TimeKnots.draw("#timeline", movie_lst, {horizontalLayout: true, color: "#669", height: 450, width:500, showLabels: true, labelFormat:"%H:%M"});
+                        });
+                        break
+                    }
+                };
+            });
+        };
+    </script>
+
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script>
         d3v7 = window.d3;
@@ -20,4 +420,5 @@
     </script>
     <script src="static/js/timeknots.js"></script>
 </body>
+
 </html>

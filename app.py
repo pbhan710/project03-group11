@@ -36,7 +36,7 @@ Director = Base.classes.director
 #################################################
 app = Flask(__name__)
 
-#################### #############################
+##################################################
 # Flask Routes
 #################################################
 
@@ -50,17 +50,20 @@ def top10actors():
    results = session.query(
       Actor.actor_id, 
       Actor.name, 
-      func.sum(Movie.revenue).label('Total')
+      func.sum(Movie.revenue).label('Total'),
+      Actor.profile_path
    ).filter(
       Movie.id == Actor.movie_id
    ).group_by(
       Actor.actor_id, 
-      Actor.name
+      Actor.name,
+      Actor.profile_path
    ).order_by(func.sum(Movie.revenue).desc()).limit(10).all()
 
    # Close session.
    session.close()
 
+   print(results)
    return results
 
 @app.route("/api/actorsmovies/<actor_id>")

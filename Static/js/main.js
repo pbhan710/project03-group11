@@ -1,24 +1,19 @@
 function init(){
     d3v7.json('/api/top10actors').then(function(data) {
-        let firstActor = data[0];
-        let firstActorID = firstActor[0];
-    
-        d3v7.json(`/api/actorsmovies/${firstActorID}`).then(function(data) {
-            let movie_lst = []; // Create an empty array.
-            for (let i = 0; i < data.length; i++) {
-                let movie = data[i]
-                let releaseDate = new Date(movie[1])
-                movie_lst.push({
-                    'name': movie[0], 
-                    'date': releaseDate,
-                    'img': `https://image.tmdb.org/t/p/w185${movie[2]}`
-                    // 'Total Revenue': movie[3]
-                })
-            }
-            TimeKnots.draw("#timeline", movie_lst, {horizontalLayout: true, color: "#669", height: 450, width:500, showLabels: true, labelFormat:"%H:%M"});
-        });
+        for (let i = 0; i < data.length; i++) {
+            
+            let actor = data[i];
+            console.log(`${i}: ${actor}`)
+            let actor_thumbnail_col = d3.select("#Actors").select(".container").select(".row").append("div").attr("class", "column");
+            let actor_thumbnail_img = actor_thumbnail_col.append("img").attr("class", "demo cursor").attr("src", `https://image.tmdb.org/t/p/w185${actor[3]}`).attr("style", "width:50%").attr("onclick", `currentSlide(${i+1})`).attr("alt", actor[1]);
+
+            let actor_slide = d3.select("#Actors").select(".row").select(".column").append("div").attr("class", "mySlides");
+            let actor_slide_num = actor_slide.append("div").attr("class", "numbertext").text(`${i+1} / 10`);
+            let actor_slide_img = actor_slide.append("img").attr("src", `https://image.tmdb.org/t/p/w185${actor[3]}`).attr("style", "width:100%");
+        };
     });
 }
+
 
 // function upd_timeline(){
 
