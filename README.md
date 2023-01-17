@@ -1,5 +1,6 @@
 # project03-group11
 Repository of code and supporting documentation for project.
+(not done yet, will finish writing/editing in morning - ramya)
 
 Contributers: Paul Han, Nivedha Raja, Corine Alida Daboiko, Krishna Musunuri, and Marquesia Atwater
 
