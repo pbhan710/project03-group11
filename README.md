@@ -49,7 +49,13 @@ Finally, our website is being run through our Flask app.py at the end.
 
 Download all files from this GitHub repository or clone this repository on your desktop. 
 
-First 
+First you must ensure the data has been correctly created and stored. Create a database in PGAdmin, for the simplicity of the project, we named our database "project03_group11_db". Then right click on your newly created database and select the query tool. Once the query tool opens, there should be a line of buttons right above your query window. Click on the left most button, when hovered over says "Open File". Then use the create_tables.sql file included in the repository and create the respective tables in PGAdmin. Simply run this file in a query. 
+
+Then, on the left hand side, expand the drop down menu of your database. You should see a variety of options. Click on Schemas, then Tables, to confirm the three tables have been successfully created: "actor", "director", and "movie".
+
+Once you have confirmed the tables have been created, right click on each table and import the cooresponding data located in the "Data" folder from this repository. 
+
+After doing this for each table, run a new query as "select * from actor" to ensure the table has been loaded with the appropriate information. Repeat for all three tables. 
 
 ## Challenges
 Some of the challenges we faced and features we hope to implement in the future:
@@ -91,7 +97,7 @@ The Full MovieLens Dataset consisting of 26 million ratings and 750,000 tag appl
 
 The Movie Details, Credits and Keywords have been collected from the TMDB Open API. This product uses the TMDb API but is not endorsed or certified by TMDb. Their API also provides access to data on many additional movies, actors and actresses, crew members, and TV shows. You can try it for yourself here.
 
-The Movie Links and Ratings have been obtained from the Official GroupLens website. The files are a part of the dataset available [here](https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset)Other Sources
+The Movie Links and Ratings have been obtained from the Official GroupLens website. The files are a part of the dataset available [here](https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset)
 
 We used the [Timeknots](https://github.com/alangrafu/timeknots) JavaScript Library
 
