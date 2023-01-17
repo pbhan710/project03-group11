@@ -25,22 +25,25 @@ We also created a wireframe of what we hoped our website would resemble:
 ## Back-End Programming
 
 Whilst creating our website, we started by first understanding the API, which contained our data, and learning it's proper documentation. We then filtered our query results of what timeframe of movies we wanted access to.  Given that there were 45,000 movie data entries in our dataset, we narrowed down our data based on the following parameters: 
-- Movies released within the time frame of January 2013 to January 2023
+- Movies released within the time frame of January 2013 to January 2023 (Resulted in pages 1-500)
 - Movies only released in English language
 - Movies that adhered to a relatively high popularity rating (In other words, movies that were not relatively well-known were not considered)
 
-Once our data was filtered down based on these parameters, it was reduced to a dataset with _____ individual movie datapoints. We then used Jupyter Notebook and python to sort our results based on actors, directors, and movies. This sorted data was then exported as three separate .csv files for easy upload into a SQL database. 
+We then requested the filtered data by making calls to TMDB's APIs to retrieve and store data into lists. Then at the end of the query, we verified the total number of movies. 
 
-In order to create a design for the data we wanted stored, we created schemas - a user schema and a reviews schema. This ensured that the user was not already stored in the database in addition to hashing the stored password after using a virtual field to check that the original password matched the password confirmation. The layout of our data within our SQL database resembles the following ERD diagram:
+Once our data was filtered down based on these parameters, it was reduced to a dataset with _____ individual movie datapoints. We then used Jupyter Notebook and python to sort our results based on actors, directors, and movies, and load those into individual dataframes. These dataframes were then exported as three separate .csv files for easy upload into a SQL database. 
+
+We used PGAdmin to connect to the local Postgres database and store movies, directors, and actors into the respective tables. Tables within the local Postgres database should already be created before attempting. In order to create a design for the data we wanted stored, we created schemas - a user schema and a reviews schema. This ensured that the user was not already stored in the database in addition to hashing the stored password after using a virtual field to check that the original password matched the password confirmation. The layout of our data within our SQL database resembles the following ERD diagram:
 
 <p align = "center">
   <img src="https://github.com/pbhan710/project03-group11/blob/main/ERD.png ">
  </p>
    
-
 Then we queried the information we wanted from our database using routes via SQLAlchemy in Flask. These routes returned jsonified versions of our results that were then read by our JavaScript file using the d3 library. 
 
 The queried results would return information illustrating a top ten list of the top movies, directors, and actors from the dataset. Then after reading the jsonified results, we displayed this information on our website in HTML. Also occuring at the same time, a different JavaScript library, [TimeKnots](https://github.com/alangrafu/timeknots), organized the cooresponding actor or directors filmography on a timeline and displayed it next to them. 
+
+Finally, our website is being run through our Flask app.py at the end. 
 
 ## How to Install and Run the Project
 
@@ -50,8 +53,8 @@ Set up:
 - Download json private key for a Service Account and have it available 
 - Set an environment variable : export GOOGLE_APPLICATION_CREDENTIALS=path/to/your-key.json
  
-### Initialize Variables
-Initialize variables used in making API calls to TMDB.
+### API Documentation Basics
+Here are a few basic details to help better understand the structure of the API
 #### URL's
 - discover_base_url
     - Base URL of TMDB's Discover API to search movies by different types of data. This includes the API key.
@@ -76,23 +79,8 @@ Initialize variables used in making API calls to TMDB.
 - vote_count.gte=1: Minimum number of votes by TMDB users on movies to search for in TMDB's Discover API. Set to 1 to exclude movies with 0 votes, reducing overall search results.
 - sort_by=popularity.desc: Sort movies pulled through TMDB's Discover API by TMDB's popularity metric among TMDB users, descending.
 - append_to_results=credits: Add to the result of an API call more details. This is used when making an API call to TMDB's Movie API to also add details on the cast/crew of the movie.
-- 
-### Request Data from API
-Make calls to TMDB's APIs to retrieve and store data into lists.
-Request: 2013-01-01 to 2023-01-14 (Pages 1-500)
-At the end of the query, verify the Total Number of Movies added. 
- 
-### Load Lists into DataFrames
-Store lists of movies, directors, and actors into DataFrames.
-Save JSON files of movies, directors, and actors.
- 
-### Import DataFrames to Postgres Database
-Connect to the local Postgres database and store movies, directors, and actors into the respective tables. Tables within the local Postgres database should already be created before attempting.
 
-INSERT PICTURE HERE
 
-### Run App
-The app is being run through app.py at the end. 
 
 ## How to Use the Project
 Provide instructions and examples so users/contributors can use the project.
