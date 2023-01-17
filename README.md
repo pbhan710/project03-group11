@@ -1,7 +1,7 @@
 # project03-group11
 Repository of code and supporting documentation for project. 
 
-Project Manager and Overall Mega Big Brained Individual: Paul Han 
+Project Manager: Paul Han 
 
 Contributers: Ramya Nivedha Raja, Corine Alida Daboiko, Krishna Musunuri, Marquesia Atwater
 
