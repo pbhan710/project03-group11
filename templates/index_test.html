@@ -384,7 +384,7 @@
 
                         d3.select("#timeline1").remove()
 
-                        d3.select("#Actors").select(".row").append("div").attr("id", "timeline1").attr("style", "width:200px;")
+                        d3.select("#Actors").select(".row").append("div").attr("id", "timeline1").attr("style", "width:1000px;")
 
                         d3v7.json(`/api/actorsmovies/${actorID}`).then(function(data) {
                             let movie_lst = []; // Create an empty array.
@@ -398,7 +398,7 @@
                                 })
                             }
 
-                            TimeKnots.draw("#timeline1", movie_lst, {horizontalLayout: true, color: "#669", height: 100, width:500, showLabels: true, labelFormat:"%H:%M"});
+                            TimeKnots.draw("#timeline1", movie_lst, {horizontalLayout: true, color: "#669", height: 100, width:1000, showLabels: true, labelFormat:"%H:%M"});
                         });
                         break
                     }
