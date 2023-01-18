@@ -169,7 +169,7 @@
                     color: #f2f2f2;
                     font-size: 12px;
                     padding: 8px 12px;
-                    position: absolute;
+                    position: relative;
                     top: 0;
                 }
 
@@ -282,7 +282,7 @@
                     color: #f2f2f2;
                     font-size: 12px;
                     padding: 8px 12px;
-                    position: absolute;
+                    position: relative;
                     top: 0;
                 }
 
@@ -375,7 +375,6 @@
             dots[slideIndex-1].className += " active";
             captionText.innerHTML = dots[slideIndex-1].alt;
 
-            console.log(slides.length)
             d3v7.json('/api/top10actors').then(function(data) {
                 for (let j = 1; j < data.length; j++) {
                     if (j = slideIndex - 1) {
@@ -383,9 +382,9 @@
                         let actorID = actor[0];
                         let actorName = actor[1];
 
-                        d3.select("#Actors").select(".row").select("#timeline").remove()
+                        d3.select("#timeline1").remove()
 
-                        d3.select("#Actors").select(".row").append("div").attr("id", "timeline").attr("style", "width:200px;")
+                        d3.select("#Actors").select(".row").append("div").attr("id", "timeline1").attr("style", "width:200px;")
 
                         d3v7.json(`/api/actorsmovies/${actorID}`).then(function(data) {
                             let movie_lst = []; // Create an empty array.
@@ -398,8 +397,8 @@
                                     'img': `https://image.tmdb.org/t/p/w185${movie[2]}`
                                 })
                             }
-                            
-                            TimeKnots.draw("#timeline", movie_lst, {horizontalLayout: true, color: "#669", height: 450, width:500, showLabels: true, labelFormat:"%H:%M"});
+
+                            TimeKnots.draw("#timeline1", movie_lst, {horizontalLayout: true, color: "#669", height: 100, width:500, showLabels: true, labelFormat:"%H:%M"});
                         });
                         break
                     }
